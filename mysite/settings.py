@@ -9,7 +9,7 @@ SECRET_KEY = ')300i%9rx)172ha)ua_*@5lu!v@q7a4pmbm(ov$0b1-fnr-+5j'
 if 'runserver' in sys.argv:
     DEBUG = True
 else:
-    DEBUG = False
+    DEBUG = True
 
 if DEBUG == False:
     SECURE_HSTS_SECONDS = 3600
