@@ -58,11 +58,11 @@ button:active, button:focus {
     text-decoration: none;
 }
 *::-moz-selection{
-    background-color: #5286ad;
+    background-color: #ffc527;
     color: #fff;
 }
 ::selection{
-    background-color: #5286ad;
+    background-color: #ffc527;
     color: #fff;
 }
 body{
@@ -105,7 +105,7 @@ h1,h2,h3,h4,h5,h6{
     color: rgba(255, 255, 255, 0.7);
 }
 .tv-projects-filter a::before, .navbar-nav > li > a::before, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover, .tv-slider .owl-nav i:hover, .tv-innerpage-title::before, .tv-cta, .tv-popular-tags-content a, .tv-highlight-text > span::before, .tv-project-name::after, .back-to-top, .tv-service-text h4::before, .tv-single-blog h3::before, .tv-member-content .tv-member-info, .tv-post-date, .tv-contact-icon::after, .tv-footer-content{
-    background-color: #5286ad;
+    background-color: #FFBD31;
 }
 .navbar-default, .tv-step-content:hover .tv-stepshover-info, .tv-member-sociallinks i, .tv-address-content, .tv-website-socialicon a:hover, .tv-footer-copyright, .tv-cta-divider::before{
     background-color: #2B465B;
@@ -123,7 +123,7 @@ h1,h2,h3,h4,h5,h6{
     color: #fff;
 }
 .tv-highlight-text > span, #accordion .panel-heading:hover h4, .tv-projects-filter a:hover, .tv-counter-value > span, .tv-copyright a, .tv-contact-info a:hover, .breadcrumb > li + li::before, .breadcrumb > .active, .tv-blog-sharelinks a:hover, .media-heading small i, .tv-author-sociallinks a:hover, .tv-porject-cat{
-    color: #5286ad;
+    color: #FFBD31;
 }
 .tv-section{
     padding: 100px 0 0;
@@ -204,7 +204,7 @@ h1,h2,h3,h4,h5,h6{
     z-index: 2;
 }
 input.tv-search-field{
-    border: 1px solid #5286ad;
+    border: 1px solid #ffc527;
     height: 50px;
     line-height: normal;
     padding: 0 12px;
@@ -377,7 +377,7 @@ input.tv-search-field{
     width: 45px;
 }
 .btn, .btn2 {
-    background: #5286ad;
+    background: #ffc527;
     border: medium none;
     border-radius: 0px;
     color: #000;
@@ -393,7 +393,7 @@ input.tv-search-field{
     color:#fff;
 }
 .btn:hover, .btn:focus, .btn:active{
-    background: #5286ad !important;
+    background: #ffc527 !important;
     border: medium none !important;
     color: #fff !important;
     outline: medium none !important;
@@ -405,7 +405,7 @@ input.tv-search-field{
     outline: medium none !important;
 }
 .btn .tv-mask, .btn2 .tv-mask{
-    background: #5286ad;
+    background: #FFBD31;
     border-radius: 0px;
     display: block;
     height: 100%;
@@ -436,7 +436,7 @@ input.tv-search-field{
     text-transform: capitalize;
 }
 .tv-section-heading h2::before, .tv-innerpage-title::before {
-    border: 2px solid #5286ad;
+    border: 2px solid #ffc527;
     content: "";
     display: block;
     height: 60px;
@@ -1069,7 +1069,7 @@ input.tv-search-field{
     height: auto;
 }
 form textarea:focus, textArea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .form-control:focus{
-    border-color: #5286ad !important;
+    border-color: #ffc527 !important;
     box-shadow: none;
 }
 
