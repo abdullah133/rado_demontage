@@ -1,0 +1,50 @@
+{% extends "admin/index.html" %}
+
+{% load static %}
+
+{% block content %}
+<div id="content-main">
+  <div class="row">
+    <a href="{% url 'base_app:init_my_db' %}">
+      <h2>Initialisieren</h2>
+    </a>
+
+  </div>
+
+  {{ block.super }}
+</div>
+{% endblock %}
+
+
+{% block sidebar %}
+
+
+<div>
+
+
+
+  {{ block.super }}
+
+
+
+
+
+
+</div>
+
+
+
+
+
+{% endblock %}
+
+
+
+{% block extrahead %}
+
+
+
+
+
+
+{% endblock %}

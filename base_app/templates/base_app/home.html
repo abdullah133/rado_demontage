@@ -1,0 +1,195 @@
+{% extends 'base_app/base.html' %}
+{% load static %}
+<title>{% block title %}{% endblock %}</title>
+{% block head %}
+
+{% endblock %}
+{% load i18n %}
+{% block content %}
+
+
+
+<div class="tv-slider-container">
+  <div class="tv-slider tv-slider-one">
+    <div class="owl-carousel owl-loaded owl-drag">
+      {% for element in home_slider %}
+      <article class="tv-slider-item">
+        <div class="tv-slider-img" style="background-image:{% cycle 'url(/static/assets/images/banner2.jpg)' 'url(/static/assets/images/banner.jpg)' %};">
+          <div class="tv-slider-content">
+            <div class="tv-slider-content-inner">
+              <h2 class="tv-highlight-text"><span>{{element.title}}</span> {{element.title_description}}</h2>
+              <p class="tv-slider-para">{{element.description}}</p>
+            </div>
+            <a href="" class="btn">
+              <span class="tv-mask"></span>
+              <span>Mehr über uns</span>
+            </a>
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<section class="tv-section">
+  <header class="tv-section-heading">
+    {% for element in home_text %}
+    <h2 class="tv-section-title">{{element.title}}</h2>
+    <p class="tv-section-para">{{element.description}}</p>
+          {% endfor %}
+  </header>
+  <div class="tv-section-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div id="accordion" class="panel-group">
+            {% for element in home_descriptions %}
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4>
+                  <a class="collapsed" href="#support{{ forloop.counter }}" data-parent="#accordion" data-toggle="collapse" aria-expanded="false"><i class="fa fa-{% cycle 'user-o' 'life-ring' 'bolt' 'truck'%}"></i>{{element.title}}</a>
+                </h4>
+              </div>
+              <div id="support{{ forloop.counter }}" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                <div class="panel-body">{{element.description}}</div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="tv-about-img">
+            {% for element in home_img %}
+                              {{element.image_gesamt_tag}}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <ul class="tv-process-steps">
+          {% for element in home_band %}
+          <li class="col-md-3 col-sm-6 col-xs-6 width-100 tv-no-paddingLR">
+            <div class="tv-step-content">
+              <div class="tv-stepsupper-info">
+                <div class="tv-info-inner">
+                  <div class="tv-info-inner-content">
+                    <div class="tv-stepsinfo-text">
+                      <h5 class="text-uppercase">{{element.title}}</h5>
+                      <a href="">
+                        <i class="fa fa-long-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tv-stepshover-info">
+                <div class="tv-info-inner">
+                  <div class="tv-info-inner-content">
+                    <div class="tv-stepsinfo-text">
+                      <h5 class="text-uppercase">{{element.title}}</h5>
+                      <p>{{element.description}}</p>
+                      <a class="btn" href="">
+                        <span class="tv-mask"></span>
+                        <span><i class="fa fa-long-arrow-right"></i></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <figure class="image">
+                  {{element.image_gesamt_tag}}
+                </figure>
+              </div>
+            </div>
+          </li>
+          {% endfor %}
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="tv-section">
+  <div class="tv-bgbanner" style="background-image: url(static/assets/images/bgbanner.jpg)">
+    <div class="tv-banner-text">
+      <div class="tv-offer-content tv-marginB-50">
+        <h4>Lets Get Offer</h4>
+        <h1>Looking for a Constructor Work With Us!</h1>
+        <a class="btn" href="">
+          <span class="tv-mask"></span>
+          <span>Kontaktieren Sie uns</span>
+        </a>
+      </div>
+      <div class="tv-counter">
+        <ul>
+          <li class="col-md-4 col-sm-4 col-xs-12 tv-no-paddingLR">
+            <div class="tv-counter-details">
+              <div class="tv-counter-value">
+                <i class="fa fa-suitcase"></i>
+                <h2 class='counter' data-slno='1' data-min='0' data-max='200' data-delay='.5' data-increment=4>200</h2>
+                <span>Projects Solved</span>
+              </div>
+            </div>
+          </li>
+          <li class="col-md-4 col-sm-4 col-xs-12 tv-no-paddingLR">
+            <div class="tv-counter-details">
+              <div class="tv-counter-value">
+                <i class="fa fa-diamond"></i>
+                <h2 class='counter' data-slno='1' data-min='0' data-max='35' data-delay='8' data-increment="1">35</h2>
+                <span>Awards & Recognition</span>
+              </div>
+            </div>
+          </li>
+          <li class="col-md-4 col-sm-4 col-xs-12 tv-no-paddingLR">
+            <div class="tv-counter-details">
+              <div class="tv-counter-value">
+                <i class="fa fa-users"></i>
+                <h2 class='counter' data-slno='1' data-min='0' data-max='830' data-delay='.5' data-increment="11">830</h2>
+                <span>Clients Worldwide</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+{% endblock %}
+
+{% block js %}
+<script>
+  $(document).ready(function() {
+    $('.tv-slider-one .owl-carousel').owlCarousel({
+      slideSpeed: 300,
+      paginationSpeed: 400,
+      transitionStyle: "fade",
+      loop: true,
+      items: 1,
+      margin: 0,
+      nav: true,
+      dots: false,
+      autoplay: true,
+      autoplayHoverPause: false,
+      autoplaySpeed: 6000,
+      navSpeed: 3000,
+      singleItem: true,
+      navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"]
+    });
+
+
+
+
+  });
+</script>
+{% endblock %}

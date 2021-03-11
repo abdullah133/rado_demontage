@@ -1,0 +1,31 @@
+{% extends 'base_app/base.html' %}
+{% load static %}
+{% load i18n %}
+
+<title>{% block title %}404 error | we are sorry{% endblock %}</title>
+{% block head %}
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<header id="header" class="header-tops">
+  <div class="container">
+
+    <h1>Oops!</h1>
+    <h2>404 {% trans "Seite nicht gefunden" %}</h2>
+  	<p>{% trans "Die gesuchte Seite wurde möglicherweise entfernt, wenn ihr Name geändert wurde" %},<br> {% trans "oder ist vorübergehend nicht verfügbar" %}.</p>
+    <div class="social-links">
+      <a href="{{contant_info.twitter_link}}"><i class="icofont-twitter"></i></a>
+      <a href="{{contant_info.facebook_link}}"><i class="icofont-facebook"></i></a>
+      <a href="{{contant_info.instagram_link}}"><i class="icofont-instagram"></i></a>
+
+    </div>
+
+  </div>
+</header>
+
+{% endblock %}

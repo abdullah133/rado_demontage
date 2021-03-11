@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Abdullah Kroum ist einer Webentwickler, Webdesigner, Photographer, Freiberufler in Wien, er erstellt Webseiten, für mehr Info einfach die Webseite besuchen">
+        <meta name="copyright" content="Demontage">
+        <meta name="audience" content="all">
+        <meta name="author" content="www.rado-demontage.at">
+        <meta name="keywords" content="Heizöltanks, Heizungsanlage, Schwimmingpool, Maschinen, Windkraftanlagen, Lüfungsanlagen, Schienen, Waggons, Kraftwerkanlagen">
+        <meta name="page-topic" content="Räumungs Service in Wien">
+        <meta name="page-type" content="Räumungs Service in Wien">
+        <meta name="revisit-after" content="7 days">
+        <link rel="icon" href="{% static 'assets/images/favicon.png' %}"/>
+        <title>{% block title %}{% endblock %}</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="{% static 'assets/css/bootstrap.min.css'%}" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
+
+        <!-- Custom styles for this template -->
+        <link href="{% static 'assets/css/style.css'%}" rel="stylesheet">
+        <link href="{% static 'assets/css/responsive.css'%}" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link href="{% static 'assets/fonts/website-font/stylesheet.css'%}" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" />
+        {% block head %}{% endblock %}
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="{% static 'assets/js/lightbox-plus-jquery.min.js'%}" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Shuffle/5.2.3/shuffle.min.js" integrity="sha512-VHIYn9ssmuPBliadBEgGCTRtCO4agkhQCxiPaTBKaAq0cm2KKpX+PE2klG1VfOHKKcN5eZcev0M3s5V2xXxVew==" crossorigin="anonymous"></script>
+        <script src="{% static 'assets/js/shuffle.custom.js'%}" type="text/javascript"></script>
+        <script src="{% static 'assets/js/counterup.min.js'%}" type="text/javascript"></script>
+        <script src="{% static 'assets/js/waypoints.min.js'%}" type="text/javascript"></script>
+        <script src="{% static 'assets/js/custom.js'%}" type="text/javascript"></script>
+    </head>
+    <body>
+        <header>
+            <div class="tv-top-header tv-paddingTB-40">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="tv-site-logo">
+                                <a href="index.html"><img src="{% static 'base_app/img/logo.png' %}" alt="logo"></a>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="tv-feature-content">
+                                <ul>
+                                    {{ master_objekt.feature_tag_1 }}
+                                    {{ master_objekt.feature_tag_2 }}
+                                    {{ master_objekt.feature_tag_3 }}
+                                    <!-- {{ master_objekt.kontakt_daten_obj.name }} -->
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tv-main-nav">
+                <div class="container">
+                    <nav class="navbar navbar-default">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="index.html"><i class="fa fa-home"></i></a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="service.html">Services</a></li>
+                                <li><a href="project.html">Projects</a></li>
+                                <li><a href="team.html">Team</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+    {% block content %}
+    {% endblock %}
+
+  {% include 'base_app/footer.html' %}
+
+
+
+
+    <script>
+        jQuery(document).ready(function ($) {
+            $('.counter').counterUp({
+                delay: 10,
+                time: 1000
+            });
+        });
+    </script>
+    <script>
+        $(window).on('scroll', function () {
+            if ($(window).scrollTop() > 130) {
+                $('.navbar-default').addClass('navbar-fixed-top');
+            } else {
+                $('.navbar-default').removeClass('navbar-fixed-top');
+            }
+        });
+    </script>
+    {% block js %}
+
+    {% endblock %}
+    <a id="back-to-top" class="scrollTop back-to-top" href="javascript:void(0);" style="display: none;">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+    </body>
+</html>

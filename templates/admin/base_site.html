@@ -1,0 +1,45 @@
+{% extends "admin/base.html" %}
+{% block extrastyle %}
+<style>
+  body:before {
+    display: block;
+    line-height: 35px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    content: "{{ ENVIRONMENT_NAME }}";
+    background-color: {{ ENVIRONMENT_COLOR }};
+}
+  #header {
+    background-color: #040404;
+    color: white
+  }
+
+  .module h2,
+  .module caption,
+  .inline-group h2 {
+    margin: 0;
+    padding: 8px;
+    font-weight: 400;
+    font-size: 13px;
+    text-align: left;
+    background: #040404;
+    color: #fff;
+  }
+  div.breadcrumbs {
+    background: #40bf40;
+
+}
+</style>
+{% endblock %}
+{% block branding %}
+{% load static %}
+<h1 id="site-name">
+
+    <a href="{% url 'admin:index' %}">
+        <img src="{% static 'assets/img/me2.jpg' %}" height="80px" />
+    </a>
+</h1>
+
+{% endblock %}
