@@ -113,54 +113,37 @@
   </div>
 </section>
 
-
-
 <section class="tv-section">
-  <div class="tv-bgbanner" style="background-image: url(static/assets/images/bgbanner.jpg)">
-    <div class="tv-banner-text">
-      <div class="tv-offer-content tv-marginB-50">
-        <h4>Lets Get Offer</h4>
-        <h1>Looking for a Constructor Work With Us!</h1>
-        <a class="btn" href="">
-          <span class="tv-mask"></span>
-          <span>Kontaktieren Sie uns</span>
-        </a>
-      </div>
-      <div class="tv-counter">
-        <ul>
-          <li class="col-md-4 col-sm-4 col-xs-12 tv-no-paddingLR">
-            <div class="tv-counter-details">
-              <div class="tv-counter-value">
-                <i class="fa fa-suitcase"></i>
-                <h2 class='counter' data-slno='1' data-min='0' data-max='200' data-delay='.5' data-increment=4>200</h2>
-                <span>Projects Solved</span>
-              </div>
+    <header class="tv-section-heading">
+        <h2 class="tv-section-title">service we provide</h2>
+        <p class="tv-section-para">Duis vehicula neque velit, nec commodo purus imperdiet ac. Vestibulum a hendrerit neque. Suspendisse feugiat enim ligula, ac suscipit elit condimentum eget.</p>
+    </header>
+    <div class="tv-section-content">
+        <div class="container">
+            <div class="row">
+                <div class="tv-services">
+                  {% for element in home_service %}
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="tv-service-content">
+                            <div class="tv-service-img">
+                              <img src="{% static 'base_app/img/logo.png' %}" alt="">
+                            </div>
+                            <div class="tv-service-text">
+                                <h4>{{element.title}}</h4>
+                                <p>{{element.description}}</p>
+                                <a class="btn" href="">
+                                    <span class="tv-mask"></span>
+                                    <span>Read More</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
-          </li>
-          <li class="col-md-4 col-sm-4 col-xs-12 tv-no-paddingLR">
-            <div class="tv-counter-details">
-              <div class="tv-counter-value">
-                <i class="fa fa-diamond"></i>
-                <h2 class='counter' data-slno='1' data-min='0' data-max='35' data-delay='8' data-increment="1">35</h2>
-                <span>Awards & Recognition</span>
-              </div>
-            </div>
-          </li>
-          <li class="col-md-4 col-sm-4 col-xs-12 tv-no-paddingLR">
-            <div class="tv-counter-details">
-              <div class="tv-counter-value">
-                <i class="fa fa-users"></i>
-                <h2 class='counter' data-slno='1' data-min='0' data-max='830' data-delay='.5' data-increment="11">830</h2>
-                <span>Clients Worldwide</span>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
+        </div>
     </div>
-  </div>
 </section>
-
 
 
 

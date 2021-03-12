@@ -436,7 +436,7 @@ input.tv-search-field{
     text-transform: capitalize;
 }
 .tv-section-heading h2::before, .tv-innerpage-title::before {
-    border: 2px solid #5286ad;
+    border: 2px solid #ffc527;
     content: "";
     display: block;
     height: 60px;

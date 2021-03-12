@@ -6,7 +6,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.sites.models import Site
 from info_app.models import KontaktDatenModel
 from .init_listen import kontaktdatenmodel_liste
-from .models import HomeSlider, HomeDescription, HomeText, HomeBand, HomeImg
+from .models import HomeSlider, HomeDescription, HomeText, HomeBand, HomeImg, HomeService
 
 def init_my_db(self):
     obj  = Site.objects.filter(id=1).update(domain='www.rado-demontage.at',name='rado-demontage.at')
@@ -35,6 +35,7 @@ class HomeView(TemplateView):
         context['home_band'] = HomeBand.objects.all()
         context['home_text'] = HomeText.objects.all()
         context['home_img'] = HomeImg.objects.all()
+        context['home_service'] = HomeService.objects.all()
         context['auf_welcher_seite'] = 'home'
         return context
 

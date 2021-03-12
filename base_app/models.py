@@ -7,6 +7,7 @@ from smartfields import fields
 from smartfields.dependencies import FileDependency
 from smartfields.processors import ImageProcessor
 from django.conf import settings
+import datetime
 
 class MasterObjekt(object):
 
@@ -45,7 +46,20 @@ class MasterObjekt(object):
         titel_1 = 'Zertifiziert'
         titel_2 = self.kontakt_daten_obj().ust_idnr
         return self.feature_tag(titel_1,titel_2)
+    def time_year(self):
+        heute = datetime.datetime.now()
+        return heute.year
 
+    def abdullah_webdesign_image_tag(self):
+        png_image_url = settings.STATIC_URL + 'base_app/img/my_icon.webp'
+        webp_image_url = settings.STATIC_URL + 'base_app/img/my_icon.webp'
+        alt_text = 'webdesigner in wien'
+        return format_html('<img src="{}" height="25" width="25" onerror="{}{}{}" alt="{}" />'.format(webp_image_url,"this.src='",png_image_url,"'",alt_text))
+
+    def abdullah_webdesign_tag(self):
+
+        image_tag = self.abdullah_webdesign_image_tag()
+        return format_html('<a href="https://www.kroums-webdesign.at" target="_blank" rel="nofollow noopener"> {} by Kroums-Webdesign</a>'.format(image_tag))
 
 class HomeSlider(models.Model):
     title = models.CharField('Titel',max_length=300)
@@ -200,6 +214,22 @@ class HomeImg(models.Model):
         else:
             return format_html('<img src="{}" width="150" height="150" />'.format(settings.STATIC_URL + 'base_app/img/kein_bild_vorhanden.webp'))
     image_tag_webp.short_description = 'Bild in .webp Format'
+
+    def get_absolute_url(self):
+        return reverse('base_app:home_page')
+
+
+class HomeService(models.Model):
+    title = models.CharField('Leistung',max_length=300, default="Rado-Montage")
+    description = models.TextField('Beschreibung der Leistung', blank=True, null=True)
+
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = "Unsere Leistungen"
+        verbose_name = "Leistung"
 
     def get_absolute_url(self):
         return reverse('base_app:home_page')

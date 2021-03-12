@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import HomeSlider, HomeDescription, HomeText, HomeBand, HomeImg
+from .models import HomeSlider, HomeDescription, HomeText, HomeBand, HomeImg, HomeService
 
 @admin.register(HomeSlider)
 class HomeSliderAdmin(admin.ModelAdmin):
@@ -22,3 +22,7 @@ class HomeBandAdmin(admin.ModelAdmin):
 class HomeImgAdmin(admin.ModelAdmin):
     list_display = ['title','image_tag_webp']
     exclude = ['bild_png','bild_webp']
+
+@admin.register(HomeService)
+class HomeServiceAdmin(admin.ModelAdmin):
+    list_display = ['title', 'description']
