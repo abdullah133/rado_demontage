@@ -46,6 +46,7 @@ class MasterObjekt(object):
         titel_1 = 'Zertifiziert'
         titel_2 = self.kontakt_daten_obj().ust_idnr
         return self.feature_tag(titel_1,titel_2)
+        
     def time_year(self):
         heute = datetime.datetime.now()
         return heute.year
