@@ -35,7 +35,6 @@ else:
 
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.pythonanywhere.com', 'www.kroums-webdesign.at', '207.154.225.193', 'kroums-webdesign.at']
-
 INSTALLED_APPS = [
     'django.contrib.sites',
     'django_admin_env_notice',
@@ -46,14 +45,24 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'base_app.apps.BaseAppConfig',
+    'service_app.apps.ServiceAppConfig',
     'about_app.apps.AboutAppConfig',
     'contact_app.apps.ContactAppConfig',
+    'projects_app.apps.ProjectsAppConfig',
+    'references_app.apps.ReferencesAppConfig',
     'info_app.apps.InfoAppConfig',
     'django.contrib.sitemaps',
     'smartfields',
     'django_cleanup.apps.CleanupConfig',
     'admin_honeypot',
+    'easy_thumbnails',
+    'image_cropping',
 ]
+
+from easy_thumbnails.conf import Settings as thumbnail_settings
+THUMBNAIL_PROCESSORS = (
+    'image_cropping.thumbnail_processors.crop_corners',
+) + thumbnail_settings.THUMBNAIL_PROCESSORS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -118,6 +127,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'de-ch'
 
 TIME_ZONE = 'Europe/Berlin'
+
 
 USE_I18N = True
 

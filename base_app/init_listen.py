@@ -8,6 +8,7 @@ kontaktdatenmodel_liste = {
     'telefon': '+43 664 65 084 22',
     'ust_idnr': 'ATU74059617',
 
+
   },
 
 }

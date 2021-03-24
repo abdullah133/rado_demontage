@@ -9,11 +9,22 @@ from django.views.generic import TemplateView
 
 
 
-admin.site.site_header = ""
-admin.site.index_title = ""
+admin.site.site_header = "Rado-Demontage Admin"
+admin.site.index_title = "Rado-Demontage Admin Portal"
 
 
 sitemaps = {
+        'Services':ServicesSitemap,
+        'ReferencesText':ReferencesTextSitemap,
+        'ReferencesModel':ReferencesModelSitemap,
+        'Kategorien':KategorienSitemap,
+        'Projects':ProjectsSitemap,
+        'AboutDescription':AboutDescriptionSitemap,
+    
+        'AboutImg':AboutImgSitemap,
+        'TeamModel':TeamModelSitemap,
+        'HomeSlider':HomeSliderSitemap,
+        'KontaktDatenModel':KontaktDatenModelSitemap,
             }
 
 
@@ -25,6 +36,9 @@ urlpatterns =[
     path('', include('about_app.urls')),
     path('', include('contact_app.urls')),
     path('', include('info_app.urls')),
+    path('', include('service_app.urls')),
+    path('', include('projects_app.urls')),
+    path('', include('references_app.urls')),
     path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

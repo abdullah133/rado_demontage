@@ -72,6 +72,9 @@ body{
     background-color: #fff;
     letter-spacing: 1px;
 }
+.team_font_color{
+    color: #fff;
+}
 h1,h2,h3,h4,h5,h6{
     font-family: 'overpasssemibold';
     letter-spacing: normal;
@@ -114,7 +117,10 @@ h1,h2,h3,h4,h5,h6{
     background: #fff;
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover, .tv-slider .owl-nav i:hover, .tv-website-socialicon a, .tv-subscribe-form form .form-control, .tv-subscribe-form form .btn{
-    color: #000;
+    color: #fff;
+}
+.tv-website-socialicon a{
+    color: #337ab7;
 }
 .tv-subscribe-form .form-control::-moz-placeholder{
     color: #fff;
@@ -895,12 +901,20 @@ input.tv-search-field{
     margin-bottom: 0;
     margin: 10px 0;
 }
+.tv-contact-info .graue_schrift{
+    color: #828282;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 23px;
+}
+
 .tv-contact-info p:last-child, .tv-contact-info a{
     color: #828282;
     font-size: 16px;
     font-weight: 400;
     line-height: 23px;
 }
+
 .tv-address-content{
     box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.3);
     padding: 30px 0;
@@ -910,7 +924,18 @@ input.tv-search-field{
     padding: 50px 0;
     width: 100%;
 }
+.mein_margin_y_1{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.mein_margin_b_1{
+  margin-bottom: 5px;
 
+}
+.mein_margin_t_1{
+  margin-top: 5px;
+
+}
 /*social*/
 
 .tv-website-socialicon a {
@@ -983,11 +1008,10 @@ input.tv-search-field{
 /*about page*/
 
 .tv-innerpage-banner {
-    background-image: url("../images/inner-banner.png");
     background-position: right top;
     background-repeat: no-repeat;
     background-size: contain;
-    height: 400px;
+    height: 250px;
     position: relative;
     width: 100%;
     z-index: 1;

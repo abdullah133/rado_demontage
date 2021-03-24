@@ -1,0 +1,106 @@
+{% extends 'base_app/base.html' %}
+{% load cropping thumbnail %}
+{% load static %}
+<title>{% block title %}About | Rado-Demontage{% endblock %}</title>
+
+
+
+{% load i18n %}
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="tv-innerpage-banner">
+  <div class="container">
+    <div class="row">
+      <div class="tv-innerpage-content">
+        <header>
+          <h1>ABOUT US</h1>
+          <ol class="breadcrumb">
+            <li>
+              <a href="{% url 'base_app:home_page' %}">Home</a>
+            </li>
+            <li class="active">about us</li>
+          </ol>
+        </header>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<section class="tv-section">
+  <header class="tv-section-heading">
+
+    <h2 class="tv-section-title">
+      {{ about_text.title }}
+    </h2>
+    <p class="tv-section-para">
+      {{ about_text.description }}
+    </p>
+
+  </header>
+  <div class="tv-section-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div id="accordion" class="panel-group">
+            {% for element in about_descriptions %}
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4>
+                  <a class="collapsed" href="#support{{ forloop.counter }}" data-parent="#accordion" data-toggle="collapse" aria-expanded="false"><i class="fa fa-{% cycle 'user-o' 'life-ring' 'bolt' 'truck'%}"></i>{{element.title}}</a>
+                </h4>
+              </div>
+              <div id="support{{ forloop.counter }}" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                <div class="panel-body">
+                  {{element.description}}
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="tv-about-img">
+
+            {{ about_text.image_gesamt_tag }}
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tv-section">
+    <div class="tv-section-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="tv-member">
+                  {% for element in team_model %}
+                    <div class="col-md-3 col-sm-6 col-xs-6 width-100 tv-no-paddingLR">
+                        <div class="tv-member-content">
+                            <div class="tv-member-image">
+                              {{ element.image_tag_png }}
+                             </div>
+                            <div class="tv-member-overlay">
+                                <div class="tv-member-info">
+                                    <div class=" team_font_color">
+                                        <h4>{{ element.name }}</h4>
+                                        <p>{{ element.position }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+</section>
+
+
+{% endblock %}

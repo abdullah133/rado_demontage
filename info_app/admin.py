@@ -6,5 +6,4 @@ from django import forms
 
 @admin.register(KontaktDatenModel)
 class KontaktDatenModelAdmin(admin.ModelAdmin):
-    list_display = ['name','email','image_tag_admin']
-    exclude = ['logo_webp','logo_png']
+    list_display = ['name','email','adresse','telefon']

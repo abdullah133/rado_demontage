@@ -16,9 +16,8 @@ class KontaktDatenModel(models.Model):
     ort = models.CharField(max_length=355, default='9200 Gossau')
     telefon = models.CharField('Telefon Nr.',max_length=300, blank=True, null=True)
     ust_idnr = models.CharField('UST-IDNr',max_length=300, blank=True, null=True)
-    logo = fields.ImageField("Logo",upload_to='logo/', blank=True,dependencies=[FileDependency(attname='logo_webp', processor=ImageProcessor(format='WEBP', scale={'max_height': 350})),FileDependency(attname='logo_png', processor=ImageProcessor(format='PNG', scale={'max_height': 350}))])
-    logo_webp = fields.ImageField("Logo .webp",upload_to='', blank=True)
-    logo_png = fields.ImageField("Logo .png",upload_to='', blank=True)
+    facebook_link = models.CharField('Facebook Link',max_length=300, blank=True, null=True)
+    instagram_link = models.CharField('Instagram Link',max_length=300, blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -28,16 +27,7 @@ class KontaktDatenModel(models.Model):
         verbose_name_plural = "Kontaktdaten"
         verbose_name = "Kontaktdaten"
 
-    def logo_tag(self):
-        return format_html('<img alt="{}" class="img-fluid" src="{}" onerror="{}{}{}" />'.format(self.name,self.logo_webp.url,"this.src='",self.logo_png.url,"'"))
 
-    def image_tag_admin(self):
-        if self.logo_png:
-            return format_html('<img src="{}" width="300" height="150" />'.format(self.logo_png.url))
-        else:
-            return 'Hier ist noch kein Bild vorhanden'
-
-    image_tag_admin.short_description = 'Logo'
 
     def homepage_name(self):
         current_site = self.website.get_current()
@@ -51,4 +41,7 @@ class KontaktDatenModel(models.Model):
         return 'https://www.{}/'.format(name)
 
     def get_home_url(self):
+        return reverse('base_app:home_page')
+
+    def get_absolute_url(self):
         return reverse('base_app:home_page')

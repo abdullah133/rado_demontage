@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from .models import ContactInfo
 from django.urls import reverse_lazy
 from django.views.generic.edit import FormView
 from .forms import ContaktForm
@@ -21,25 +20,22 @@ class ContactView(FormView):
         betreff = form.cleaned_data['betreff']
         name = form.cleaned_data['name']
         nachricht = form.cleaned_data['nachricht']
+        telefon = form.cleaned_data['telefon']
         subject = 'Ihr habt eine neue Nachricht!'
         message = 'Ihr habt eine neue Nachricht'
         msg_html = render_to_string('contact_app/emails/email_contact.html', {'user_email':user_email,
                                                                                 'name':name,
                                                                                 'betreff':betreff,
-                                                                                'nachricht':nachricht,})
-
+                                                                                'nachricht':nachricht,
+                                                                                'telefon':telefon,})
         eigene_mail_adresse = settings.DEFAULT_FROM_EMAIL
         to_list = [eigene_mail_adresse,]
-
         send_mail(subject=subject,message=message, from_email=eigene_mail_adresse, recipient_list=to_list,html_message=msg_html,)
-
-
-
         return super().form_valid(form)
 
     def get_context_data(self, **kwargs):
         context = super(ContactView, self).get_context_data(**kwargs)
-        context['auf_welcher_seite'] = 'contact'
+        context['auf_welcher_seite'] = 'kontakt'
         return context
 
 class ContactViewErfolg(TemplateView):

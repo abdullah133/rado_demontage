@@ -1,0 +1,43 @@
+{% extends 'base_app/base.html' %}
+<title>{% block title %}Kontakt-Erfolg | Rado-Demontage{% endblock %}</title>
+{% load static %}
+{% load i18n %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+        <div class="tv-innerpage-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="tv-innerpage-content">
+                        <header>
+                            <h1>KONTAKT ERFOLG</h1>
+                            <ol class="breadcrumb">
+                                <li>
+                                    <a href="{% url 'base_app:home_page' %}">Home</a>
+                                </li>
+                                <li class="active">KONTAKT</li>
+                            </ol>
+                        </header>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="tv-section">
+            <header class="tv-section-heading">
+                <h2 class="tv-section-title">Danke</h2>
+                <p class="tv-section-para">Duis vehicula neque velit, nec commodo purus imperdiet ac. Vestibulum a hendrerit neque. Suspendisse feugiat enim ligula, ac suscipit elit condimentum eget.</p>
+            </header>
+            <div class="tv-section-content">
+                <div class="container-fluid tv-marginT-50">
+                    <div class="row">
+                        <div class="tv-map">
+                          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d211.08338811227313!2d16.45792726160416!3d47.78936048249825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c36c294b4538d%3A0x934c8be43e4beb8f!2sGemeindegasse%2016%2C%207024%20Hirm!5e0!3m2!1sen!2sat!4v1616489447632!5m2!1sen!2sat" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}

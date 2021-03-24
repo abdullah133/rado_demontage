@@ -1,114 +1,78 @@
+{% load static %}
+
 <footer class="tv-section">
-    <div class="tv-footer-content">
-        <div class="container">
-            <div class="row">
-                <div class="tv-address-content">
-                    <div class="col-xs-12 col-sm-12 col-md-4">
-                        <div class="tv-contact-address-content">
-                            <div class="tv-contact-icon pull-left">
-                                <i class="fa fa-map-marker fa-lg"></i>
-                            </div>
-                            <div class="tv-contact-info">
-                                <p class="text-capitalize">visit us</p>
-                                <p class="text-capitalize">Old York Drive Richmond USA.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-4">
-                        <div class="tv-contact-address-content">
-                            <div class="tv-contact-icon pull-left">
-                                <i class="fa fa-envelope fa-lg"></i>
-                            </div>
-                            <div class="tv-contact-info">
-                                <p class="text-capitalize">Email Us</p>
-                                <a href="mailto:demo@info.com" class="text-capitalize">demo@info.com</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-4">
-                        <div class="tv-contact-address-content">
-                            <div class="tv-contact-icon pull-left">
-                                <i class="fa fa-phone fa-lg"></i>
-                            </div>
-                            <div class="tv-contact-info">
-                                <p class="text-capitalize">Call Us</p>
-                                <a href="tel:+1-202-555-0100" class="text-capitalize">1-202-555-0100</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  <div class="tv-footer-content">
+    <div class="container">
+      <div class="row">
+        <div class="tv-address-content">
+          <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="tv-contact-address-content">
+              <div class="tv-contact-icon pull-left">
+                <i class="fa fa-map-marker fa-lg"></i>
+              </div>
+              <div class="tv-contact-info">
+                <p>Standort</p>
+                <p class="graue_schrift">{{ contant_info.adresse }}, {{ contant_info.ort }}</p>
+                
+              </div>
             </div>
-            <div class="row">
-                <div class="tv-footer-social">
-                    <div class="col-xs-12 col-sm-12 col-md-6">
-                        <div class="tv-website-socialinfo pull-left text-capitalize pull-none-xs">
-                            <p>
-                                follow us
-                                <br>
-                                on social networks
-                            </p>
-                        </div>
-                        <div class="tv-website-socialicon pull-right text-right pull-none-xs">
-                            <a href="#">
-                                <i class="fa fa-facebook"></i>
-                                <i class="fa fa-facebook"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fa fa-google-plus"></i>
-                                <i class="fa fa-google-plus"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fa fa-twitter"></i>
-                                <i class="fa fa-twitter"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fa fa-linkedin"></i>
-                                <i class="fa fa-linkedin"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fa fa-pinterest"></i>
-                                <i class="fa fa-pinterest"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fa fa-flickr"></i>
-                                <i class="fa fa-flickr"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fa fa-rss"></i>
-                                <i class="fa fa-rss"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6">
-                        <div class="tv-subscribe-info pull-left text-capitalize pull-none-xs">
-                            <p>
-                                subscribe
-                                <br>
-                                on our newsletter
-                            </p>
-                        </div>
-                        <div class="tv-subscribe-form pull-right text-right">
-                            <form>
-                                <div class="input-group">
-                                    <input class="form-control" type="text" placeholder="Type Your Email Account">
-                                    <span class="input-group-btn">
-                                        <button class="btn text-capitalize" type="button">join</button>
-                                    </span>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="tv-contact-address-content">
+              <div class="tv-contact-icon pull-left">
+                <i class="fa fa-envelope fa-lg"></i>
+              </div>
+              <div class="tv-contact-info">
+                <p>E-Mail</p>
+                <p>{{ contant_info.email }}</p>
+              </div>
             </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="tv-contact-address-content">
+              <div class="tv-contact-icon pull-left">
+                <i class="fa fa-phone fa-lg"></i>
+              </div>
+              <div class="tv-contact-info">
+                <p>Telefon</p>
+                <p>{{ contant_info.telefon }}</p>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-    <div class="tv-footer-copyright">
-        <div class="container">
-            <div class="row">
-                <div class="tv-copyright">
-                    {{master_objekt.time_year}} Rado-Demontage. All Rights Reserved |  {{master_objekt.abdullah_webdesign_tag}}
-                </div>
+      </div>
+      <div class="row">
+        <div class="tv-footer-social">
+          <div class="col-xs-12 col-sm-12 col-md-7">
+            <div class="tv-website-socialicon pull-right text-right pull-none-xs">
+              <a href="{{ contant_info.facebook_link }}" target="_blank">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-facebook"></i>
+              </a>
+              <a href="{{ contant_info.instagram_link }}" target="_blank">
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-instagram"></i>
+              </a>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+  <div class="tv-footer-copyright">
+    <div class="container">
+      <div class="row my-3">
+        <div class="tv-copyright mein_margin_y_1">
+          {{master_objekt.time_year}} Rado-Demontage. All Rights Reserved
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="tv-copyright mein_margin_t_1">
+
+          {{master_objekt.abdullah_webdesign_tag}}
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>

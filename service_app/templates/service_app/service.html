@@ -1,0 +1,64 @@
+{% extends 'base_app/base.html' %}
+{% load static %}
+<title>{% block title %}Services | Rado-Demontage{% endblock %}</title>
+
+{% load i18n %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="tv-innerpage-banner">
+    <div class="container">
+        <div class="row">
+            <div class="tv-innerpage-content">
+                <header>
+                    <h1>Our services</h1>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="{% url 'base_app:home_page' %}">Home</a>
+                        </li>
+                        <li class="active">about us</li>
+                    </ol>
+                </header>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="tv-section">
+    <header class="tv-section-heading">
+        <h2 class="tv-section-title">service we provide</h2>
+        <p class="tv-section-para">Duis vehicula neque velit, nec commodo purus imperdiet ac. Vestibulum a hendrerit neque. Suspendisse feugiat enim ligula, ac suscipit elit condimentum eget.</p>
+    </header>
+    <div class="tv-section-content">
+        <div class="container">
+            <div class="row">
+                <div class="tv-services">
+                  {% for element in home_service %}
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="tv-service-content">
+                            <div class="tv-service-img">
+                              {{element.image_tag_admin}}
+                              {{element.image_tag_admin}}
+                            </div>
+                            <div class="tv-service-text">
+                                <h4>{{element.title}}</h4>
+                                <p>{{element.description}}</p>
+                                <a class="btn" href="">
+                                    <span class="tv-mask"></span>
+                                    <span>Read More</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

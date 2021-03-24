@@ -1,0 +1,91 @@
+{% extends 'base_app/base.html' %}
+{% load cropping thumbnail %}
+{% load static %}
+<title>{% block title %}Referenzen | Rado-Demontage{% endblock %}</title>
+
+
+
+{% load i18n %}
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="tv-innerpage-banner">
+  <div class="container">
+    <div class="row">
+      <div class="tv-innerpage-content">
+        <header>
+          <h1>Referenzen</h1>
+          <ol class="breadcrumb">
+            <li>
+              <a href="{% url 'base_app:home_page' %}">Home</a>
+            </li>
+            <li class="active">Referenzen</li>
+          </ol>
+        </header>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<section class="tv-section">
+  <header class="tv-section-heading">
+    {% for element in references_description %}
+    <h2 class="tv-section-title">
+      {{ element.title }}
+    </h2>
+    <p class="tv-section-para">
+      {{ element.description }}
+    </p>
+    {% endfor %}
+  </header>
+
+
+  <div class="tv-section-content">
+    <div class="container-fluid">
+      <div class="row">
+        <ul class="tv-process-steps">
+          {% for element in references %}
+          <li class="col-md-3 col-sm-6 col-xs-6 width-100 tv-no-paddingLR">
+            <div class="tv-step-content">
+              <div class="tv-stepsupper-info">
+                <div class="tv-info-inner">
+                  <div class="tv-info-inner-content">
+                    <div class="tv-stepsinfo-text">
+                      <h5 class="text-uppercase">{{element.title}}</h5>
+                      <a href="">
+                        <i class="fa fa-long-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tv-stepshover-info">
+                <div class="tv-info-inner">
+                  <div class="tv-info-inner-content">
+                    <div class="tv-stepsinfo-text">
+                      <h5 class="text-uppercase">{{element.title}}</h5>
+                      <p>{{element.description}}</p>
+
+                    </div>
+                  </div>
+                </div>
+                <figure class="image">
+                  {{ element.image_tag_png }}
+                </figure>
+              </div>
+            </div>
+          </li>
+          {% endfor %}
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}
