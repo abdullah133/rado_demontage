@@ -13,7 +13,7 @@
               <div class="tv-contact-info">
                 <p>Standort</p>
                 <p class="graue_schrift">{{ contant_info.adresse }}, {{ contant_info.ort }}</p>
-                
+
               </div>
             </div>
           </div>
@@ -63,14 +63,20 @@
     <div class="container">
       <div class="row my-3">
         <div class="tv-copyright mein_margin_y_1">
-          {{master_objekt.time_year}} Rado-Demontage. All Rights Reserved
+          <a href="{% url 'impressum_app:impressum_page' %}">Impressum und AGB's</a>
+
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="tv-copyright mein_margin_y_1">
+          {{master_objekt.time_year}}&copy; Rado-Demontage. All Rights Reserved
 
         </div>
       </div>
       <div class="row">
         <div class="tv-copyright mein_margin_t_1">
 
-          {{master_objekt.abdullah_webdesign_tag}}
+          {{ master_objekt.abdullah_webdesign_tag }}
         </div>
       </div>
     </div>

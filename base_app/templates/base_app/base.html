@@ -13,7 +13,7 @@
         <meta name="page-topic" content="Räumungs Service in Wien">
         <meta name="page-type" content="Räumungs Service in Wien">
         <meta name="revisit-after" content="7 days">
-        <link rel="icon" href="{% static 'assets/images/favicon.png' %}"/>
+        <link rel="icon" href="{% static 'base_app/img/favicon.png' %}"/>
         <title>{% block title %}{% endblock %}</title>
 
         <!-- Bootstrap core CSS -->
@@ -71,10 +71,10 @@
                         <div class="collapse navbar-collapse" id="myNavbar">
                             <ul class="nav navbar-nav">
                                 <li class="{% if auf_welcher_seite == 'home' %}active{% endif %}"><a href="{% url 'base_app:home_page' %}"><i class="fa fa-home"></i></a></li>
-                                <li class="{% if auf_welcher_seite == 'about' %}active{% endif %}"><a href="{% url 'about_app:about_page' %}">About</a></li>
-                                <li class="{% if auf_welcher_seite == 'service' %}active{% endif %}"><a href="{% url 'service_app:service_page' %}">Services</a></li>
+                                <li class="{% if auf_welcher_seite == 'about' %}active{% endif %}"><a href="{% url 'about_app:about_page' %}">Über uns</a></li>
+                                <li class="{% if auf_welcher_seite == 'service' %}active{% endif %}"><a href="{% url 'service_app:service_page' %}">Leistungen</a></li>
                                 <li class="{% if auf_welcher_seite == 'references' %}active{% endif %}"><a href="{% url 'references_app:references_page' %}">Referenzen</a></li>
-                                <li class="{% if auf_welcher_seite == 'kontakt' %}active{% endif %}"><a href="{% url 'contact_app:contact_page' %}">Contact</a></li>
+                                <li class="{% if auf_welcher_seite == 'kontakt' %}active{% endif %}"><a href="{% url 'contact_app:contact_page' %}">Kontakt</a></li>
                             </ul>
                         </div>
                     </nav>

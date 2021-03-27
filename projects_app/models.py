@@ -59,7 +59,8 @@ class Projects(models.Model):
                 }).url
         return format_html('<img src="{}" class="img-responsive" alt="{}_Webdesinger in Wien" />'.format(thumbnail_url,self.title))
 
-
+    def get_detail_url(self):
+        return reverse('projects_app:projects_detail_page', kwargs={'pk': self.pk})
 
     def get_absolute_url(self):
         return reverse('base_app:home_page')

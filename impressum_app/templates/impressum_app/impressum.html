@@ -1,0 +1,52 @@
+{% extends 'base_app/base.html' %}
+{% load static %}
+{% block title %}Impressum und AGBs{% endblock %}
+{% block head %}
+{% endblock %}
+{% block content %}
+        <div class="tv-innerpage-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="tv-innerpage-content">
+                        <header>
+                            <h1>IMPRESSUM UND AGB's</h1>
+                            <ol class="breadcrumb">
+                                <li>
+                                    <a href="{% url 'base_app:home_page' %}">Home</a>
+                                </li>
+                                <li class="active">Impressum</li>
+                            </ol>
+                        </header>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="tv-section">
+            <div class="tv-section-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="tv-single-blog">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="tv-blog-content">
+                                  {% for element in impressum %}
+                                    <div class="tv-blog-text">
+                                        <div class="tv-blog-title mt">
+                                            <h4 class="text-center">
+
+                                                <a>{{ element.title }}</a>
+                                            </h4>
+                                        </div>
+                                        <div class="tv-blog-desc text-center">
+                                            {{ element.description|linebreaks|urlize }}
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endblock %}

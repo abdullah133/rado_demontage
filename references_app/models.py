@@ -10,7 +10,7 @@ class ReferencesModel(models.Model):
     description = models.TextField('text', blank=True, null=True)
     bild = models.ImageField('Bild',blank=True, upload_to='references/%m/')
     cropping = ImageRatioField('bild', '777x500')
-
+    url = models.CharField('URL',max_length=300, blank=True, null=True)
 
     class Meta:
         verbose_name_plural = "Referenzen"

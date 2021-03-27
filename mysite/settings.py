@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'projects_app.apps.ProjectsAppConfig',
     'references_app.apps.ReferencesAppConfig',
     'info_app.apps.InfoAppConfig',
+    'impressum_app.apps.ImpressumAppConfig',
     'django.contrib.sitemaps',
     'smartfields',
     'django_cleanup.apps.CleanupConfig',

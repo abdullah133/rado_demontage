@@ -1,5 +1,6 @@
 {% extends 'base_app/base.html' %}
 {% load static %}
+
 <title>{% block title %}Services | Rado-Demontage{% endblock %}</title>
 
 {% load i18n %}
@@ -9,24 +10,25 @@
 {% endblock %}
 
 {% block content %}
-
+{% get_static_prefix as STATIC_URL %}
 <div class="tv-innerpage-banner">
     <div class="container">
         <div class="row">
             <div class="tv-innerpage-content">
                 <header>
-                    <h1>Our services</h1>
+                    <h1>UNSERE LEISTUNGEN</h1>
                     <ol class="breadcrumb">
                         <li>
                             <a href="{% url 'base_app:home_page' %}">Home</a>
                         </li>
-                        <li class="active">about us</li>
+                        <li class="active">Leistungen</li>
                     </ol>
                 </header>
             </div>
         </div>
     </div>
 </div>
+
 
 
 <section class="tv-section">
@@ -42,15 +44,15 @@
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="tv-service-content">
                             <div class="tv-service-img">
-                              {{element.image_tag_admin}}
-                              {{element.image_tag_admin}}
+                              <img src="{{ STATIC_URL }}{% cycle 'service_app/icon_workers_hell.png' 'service_app/icon_workers_hell.png' 'service_app/icon_workers_hell.png' 'service_app/icon_workers_hell.png' %}" alt="{{element.title}}_service_rado_demontage">
+                              <img src="{{ STATIC_URL }}{% cycle 'service_app/icon_workes_dunkel.png' 'service_app/icon_workes_dunkel.png' 'service_app/icon_workes_dunkel.png' 'service_app/icon_workes_dunkel.png' %}" alt="{{element.title}}_service_rado_demontage">
                             </div>
                             <div class="tv-service-text">
                                 <h4>{{element.title}}</h4>
                                 <p>{{element.description}}</p>
                                 <a class="btn" href="">
                                     <span class="tv-mask"></span>
-                                    <span>Read More</span>
+                                    <span class="text-white">Mehr lesen</span>
                                 </a>
                             </div>
                         </div>

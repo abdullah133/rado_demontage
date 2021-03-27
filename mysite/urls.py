@@ -20,7 +20,7 @@ sitemaps = {
         'Kategorien':KategorienSitemap,
         'Projects':ProjectsSitemap,
         'AboutDescription':AboutDescriptionSitemap,
-    
+
         'AboutImg':AboutImgSitemap,
         'TeamModel':TeamModelSitemap,
         'HomeSlider':HomeSliderSitemap,
@@ -39,6 +39,7 @@ urlpatterns =[
     path('', include('service_app.urls')),
     path('', include('projects_app.urls')),
     path('', include('references_app.urls')),
+    path('', include('impressum_app.urls')),
     path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
