@@ -6,6 +6,15 @@ from image_cropping import ImageCropWidget
 from django.template.response import TemplateResponse
 from image_cropping import ImageCroppingMixin
 
+def save_ob(modeladmin, request, queryset):
+
+    for element in queryset:
+        element.save()
+
+save_ob.short_description = "copy_bauteil_to_new_path"
+
+
+
 
 class ProjectsForm(forms.ModelForm):
     class Media:
@@ -17,7 +26,7 @@ class ProjectsForm(forms.ModelForm):
 @admin.register(Projects)
 class ProjectsAdmin(ImageCroppingMixin, admin.ModelAdmin):
     list_display = ['title','description','kategorie','image_tag_admin']
-
+    actions = [save_ob]
 
     def render_change_form(self, request, context, add=False, change=False, form_url='', obj=None):
         context.update({

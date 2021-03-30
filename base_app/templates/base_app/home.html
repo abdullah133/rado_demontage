@@ -21,7 +21,7 @@
               <h2 class="tv-highlight-text"><span>{{element.title}}</span> {{element.title_description}}</h2>
               <p class="tv-slider-para">{{element.description}}</p>
             </div>
-            <a href="" class="btn">
+            <a href="{% url 'about_app:about_page' %}" class="btn">
               <span class="tv-mask"></span>
               <span class="text-white">Mehr über uns</span>
             </a>
@@ -47,7 +47,7 @@
 
 
 
-            <a class="active" data-group="all">All Projects</a>
+            <a class="active" data-group="all">Alle Projekte</a>
 
             {% for element in kategorien %}
             <a data-group="{{ element }}">{{element.kategorie_name}}</a>
@@ -68,20 +68,20 @@
               </div>
 
 
-
+<a href="{{ element.get_detail_url }}">
               <div class="tv-project-overlaytext">
                 <div class="tv-project-midvalue">
                   <span class="tv-porject-cat">{{ element.kategorie }}</span>
                   <span class="tv-project-name">{{ element.title }}</span>
                   <span class="tv-project-plus">
-                    <a href="{{ element.get_detail_url }}" class="tv-plus example-image-link img-responsive">
+                    <p class="tv-plus example-image-link img-responsive">
                       <i class="fa fa-plus" aria-hidden="true"></i>
-                    </a>
+                    </p>
                   </span>
                 </div>
               </div>
 
-
+</a>
 
 
             </div>

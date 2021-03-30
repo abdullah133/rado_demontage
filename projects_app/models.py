@@ -8,6 +8,7 @@ from django.conf import settings
 from easy_thumbnails.files import get_thumbnailer
 from image_cropping import ImageRatioField
 from easy_thumbnails.signals import thumbnail_created
+import slugify
 
 class Kategorien(models.Model):
     kategorie_name = models.CharField(max_length=30,blank=True, null=True,)
@@ -29,10 +30,15 @@ class Projects(models.Model):
     bild = models.ImageField('Bild',blank=True, upload_to='projects/%m/')
     description = models.TextField(blank=True, null=True)
     cropping = ImageRatioField('bild', '800x600')
+    slug = models.SlugField(max_length=40,allow_unicode=True,blank=True, null=True)
 
     class Meta:
         verbose_name_plural = "Projekte"
         verbose_name = "Projekt"
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify.slugify(str(self.title))
+        super(Projects, self).save(*args, **kwargs)
 
 
     def __str__(self):
@@ -60,7 +66,7 @@ class Projects(models.Model):
         return format_html('<img src="{}" class="img-responsive" alt="{}_Webdesinger in Wien" />'.format(thumbnail_url,self.title))
 
     def get_detail_url(self):
-        return reverse('projects_app:projects_detail_page', kwargs={'pk': self.pk})
+        return reverse('projects_app:projects_detail_page', kwargs={'slug':self.slug, 'pk': self.pk})
 
     def get_absolute_url(self):
         return reverse('base_app:home_page')

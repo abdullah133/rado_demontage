@@ -18,7 +18,7 @@ class KontaktDatenModel(models.Model):
     ust_idnr = models.CharField('UST-IDNr',max_length=300, blank=True, null=True)
     facebook_link = models.CharField('Facebook Link',max_length=300, blank=True, null=True)
     instagram_link = models.CharField('Instagram Link',max_length=300, blank=True, null=True)
-
+    unternehmens_sitz = models.CharField(max_length=355, default='Sitz: Hirm')
     def __str__(self):
         return self.name
 
@@ -27,6 +27,9 @@ class KontaktDatenModel(models.Model):
         verbose_name_plural = "Kontaktdaten"
         verbose_name = "Kontaktdaten"
 
+    def unternehmens_name(self):
+        current_site = self.website.get_current()
+        return current_site.name
 
 
     def homepage_name(self):

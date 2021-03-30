@@ -4,7 +4,7 @@ app_name = 'projects_app'
 
 urlpatterns = [
 
-    path('Projects/<int:pk>/', ProjectDetailView.as_view(), name='projects_detail_page'),
+    path('Projekte/<slug:slug>/<int:pk>/', ProjectDetailView.as_view(), name='projects_detail_page'),
 
 
 ]

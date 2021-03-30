@@ -111,7 +111,7 @@ h1,h2,h3,h4,h5,h6{
 }
 .tv-projects-filter a::before, .navbar-nav > li > a::before, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus,
 .navbar-default .navbar-nav > .active > a:hover, .tv-slider .owl-nav i:hover, .tv-innerpage-title::before, .tv-cta, .tv-popular-tags-content a,
-.tv-highlight-text > span::before, .tv-project-name::after, .back-to-top, .tv-service-text h4::before, .tv-single-blog h3::before, .tv-member-content .tv-member-info, .tv-post-date, .tv-contact-icon::after, .tv-footer-content{
+.tv-highlight-text > span::before, .tv-project-name::after, .tv-service-text h4::before, .tv-single-blog h3::before, .tv-member-content .tv-member-info, .tv-post-date, .tv-contact-icon::after, .tv-footer-content{
     background-color: #5286ad;
 }
 .navbar-default, .tv-step-content:hover .tv-stepshover-info, .tv-member-sociallinks i, .tv-address-content, .tv-website-socialicon a:hover, .tv-footer-copyright, .tv-cta-divider::before{
@@ -145,13 +145,13 @@ h1,h2,h3,h4,h5,h6{
     color: #5286ad;
 }
 .tv-section{
-    padding: 100px 0 0;
+    padding: 70px 0 0;
 }
 .tv-section-heading, .tv-about-img, .tv-projects-filter, .tv-brand-image, .tv-copyright, .tv-slider .owl-nav i, .tv-section-heading h2::before, .tv-innerpage-title::before, #accordion a::after, .tv-step-content, .tv-member-content .tv-member-overlay, .tv-post-date, .tv-website-socialicon a, .tv-subscribe-form form .btn, .tv-innerpage-content, .back-to-top{
     text-align: center;
 }
 .tv-section-heading{
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 }
 .tv-section-para, .tv-about-img img{
     margin-left: auto;
@@ -166,6 +166,7 @@ h1,h2,h3,h4,h5,h6{
 }
 .tv-marginT-50{
     margin-top: 50px;
+    box-shadow: 0 10px 20px 0 rgb(0 0 0 / 20%);
 }
 .tv-projects-filter a, .tv-innerpage-title, .tv-single-blog h3{
     position: relative;
@@ -181,7 +182,10 @@ h1,h2,h3,h4,h5,h6{
     margin-bottom: 0px;
     padding: 10px 0;
 }
-
+.img-responsive{
+    width: 100%;
+    height: 100%;
+}
 /*header*/
 .tv-checkmark::before{
     content: "\f046";
@@ -461,7 +465,6 @@ input.tv-search-field{
 .tv-section-title{
     position: relative;
     z-index: 3;
-    text-transform: capitalize;
 }
 .tv-section-heading h2::before, .tv-innerpage-title::before {
     border: 3px solid rgb(82, 134, 173 ,0.2);
@@ -1053,11 +1056,11 @@ input.tv-search-field{
     background-position: right top;
     background-repeat: no-repeat;
     background-size: contain;
-    height: 250px;
+    height: 200px;
     position: relative;
     width: 100%;
     z-index: 1;
-    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
 }
 .tv-innerpage-content {
     left: 20px;
@@ -1104,7 +1107,8 @@ input.tv-search-field{
 }
 .back-to-top{
     bottom: 9px;
-    color: #000 !important;
+    color: #fff !important;
+    background-color: #4f7c9e;
     cursor: pointer;
     font-size: 12px;
     height: 30px;
@@ -1117,10 +1121,13 @@ input.tv-search-field{
     z-index: 9999;
 }
 .back-to-top:hover{
-    background: #000;
+    background: #5286ad;
     color: #fff !important;
 }
+.margin_bottom_0{
+margin-bottom: 0;
 
+}
 /*blog page*/
 .tv-blog .col-md-6:nth-child(2n+1){
     clear: both;
@@ -1134,7 +1141,9 @@ input.tv-search-field{
     padding: 10px;
     height: auto;
 }
-form textarea:focus, textArea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .form-control:focus{
+form textarea:focus, textArea:focus, input[type="text"]:focus, input[type="password"]:focus,
+input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus,
+input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .form-control:focus{
     border-color: #5286ad !important;
     box-shadow: none;
 }

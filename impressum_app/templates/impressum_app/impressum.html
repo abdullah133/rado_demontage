@@ -4,6 +4,7 @@
 {% block head %}
 {% endblock %}
 {% block content %}
+
         <div class="tv-innerpage-banner">
             <div class="container">
                 <div class="row">
@@ -21,7 +22,34 @@
                 </div>
             </div>
         </div>
+
         <section class="tv-section">
+          <header class="tv-section-heading margin_bottom_0">
+
+            <h2 class="tv-section-title">
+              {{ contant_info.name }}
+            </h2>
+            <p class="tv-section-para margin_bottom_0">
+              {{ contant_info.adresse }}
+            </p>
+            <p class="tv-section-para margin_bottom_0">
+              {{ contant_info.ort }}
+            </p>
+            <p class="tv-section-para margin_bottom_0">
+              {{ contant_info.telefon }}
+            </p>
+            <p class="tv-section-para margin_bottom_0">
+              {{ contant_info.email }}
+            </p>
+            <p class="tv-section-para margin_bottom_0">
+              {{ contant_info.ust_idnr }}
+            </p>
+            <p class="tv-section-para margin_bottom_0">
+              {{ contant_info.unternehmens_sitz }}
+            </p>
+
+          </header>
+
             <div class="tv-section-content">
                 <div class="container">
                     <div class="row">
